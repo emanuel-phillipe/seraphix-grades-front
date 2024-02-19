@@ -35,7 +35,8 @@ export default function LoginForm(){
       email: state.email, 
       password: state.password,
       }, {
-        withCredentials: true      
+        withCredentials: true,
+        headers: {"Content-Type": "application/json"}      
       })
       .then((data) => {status = data.status})
 
