@@ -31,7 +31,7 @@ export default function LoginForm(){
 
     var status = "";
 
-    const response = await axios.post("https://seraphix.com.br/api/v1/user/login/", {
+    const response = await axios.post("http://seraphix.com.br/api/v1/user/login", {
       email: state.email, 
       password: state.password,
       }, {
@@ -40,6 +40,7 @@ export default function LoginForm(){
       })
       .then((data) => {status = data.status})
 
+      console.log(status);
       if(status == 200) push("/dashboard")
       else console.log("ERRO");
   }
