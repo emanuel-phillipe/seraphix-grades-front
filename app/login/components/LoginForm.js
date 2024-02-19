@@ -41,7 +41,7 @@ export default function LoginForm(){
       })
       .then((data) => {status = data.data})
 
-      console.log(data);
+      console.log(status);
       if(status == 200) push("/dashboard")
       else console.log("ERRO");
   }
