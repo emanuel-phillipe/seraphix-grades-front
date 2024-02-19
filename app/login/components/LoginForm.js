@@ -37,7 +37,7 @@ export default function LoginForm(){
       password: state.password,
     }
 
-    const response = await axios.post("https://seraphgradesapi.onrender.com/api/v1/user/login", dataToSend, {headers: {"Content-Type": "application/json"}, withCredentials: true, credentials: "include"})
+    const response = await axios.post("https://seraphgradesapi.onrender.com/api/v1/user/login", dataToSend, {headers: {"Content-Type": "application/json"}, withCredentials: true, credentials: 'include'})
     .then((data) => {status = data.status})
 
     console.log(status);
