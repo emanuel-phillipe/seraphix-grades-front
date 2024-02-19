@@ -40,15 +40,14 @@ export default function LoginForm(){
     const response = await axios.post("https://seraphgradesapi.onrender.com/api/v1/user/login", dataToSend, {headers: {"Content-Type": "application/json"}, withCredentials: true})
     .then((data) => {status = data.status})
 
-      if(status == 200) push("/dashboard")
-      else console.log("ERRO");
+    console.log(status);
   }
 
   const buttonSituation = state.email != "" && state.password != "" // CASO SEJA FALSO, O BOTÃO DE ENTRAR ESTARÁ BLOQUEADO
 
   return (
     <div className="flex">
-      <form onSubmit={onSubmit} className="flex flex-col w-[30rem]">
+      <form onSubmit={onSubmit} method="POST" className="flex flex-col w-[30rem]">
 
         <span className="text-zinc-300 mb-1">E-mail</span>
         <input value={state.email} onChange={(event) => {setState((currentState)=> {return {...currentState, email: event.target.value}})}} type="text" placeholder="eu@hotmail.com" className="bg-transparent border-[1.5px] transition-colors border-zinc-700 focus:border-zinc-200 pl-3 py-[0.5rem] rounded-[8px] outline-none text-zinc-50 mb-[1rem] placeholder:text-zinc-500"/>
