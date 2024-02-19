@@ -39,9 +39,8 @@ export default function LoginForm(){
         withCredentials: true,
         headers: {"Content-Type": "application/json"}      
       })
-      .then((data) => {status = data.data})
+      .then((data) => {console.log(data);})
 
-      console.log(status);
       if(status == 200) push("/dashboard")
       else console.log("ERRO");
   }
