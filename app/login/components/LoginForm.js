@@ -41,6 +41,7 @@ export default function LoginForm(){
       .then((data) => {status = data.status})
 
       if(status == 200) push("/dashboard")
+      else console.log("ERRO");
   }
 
   const buttonSituation = state.email != "" && state.password != "" // CASO SEJA FALSO, O BOTÃO DE ENTRAR ESTARÁ BLOQUEADO
