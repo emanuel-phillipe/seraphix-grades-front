@@ -1,6 +1,7 @@
 "use client"; // This is a client component 👈🏽
 
 import { EyeSlash, Eye } from "@phosphor-icons/react/dist/ssr";
+import { data } from "autoprefixer";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
@@ -38,9 +39,9 @@ export default function LoginForm(){
         withCredentials: true,
         headers: {"Content-Type": "application/json"}      
       })
-      .then((data) => {status = data.status})
+      .then((data) => {status = data.data})
 
-      console.log(status);
+      console.log(data);
       if(status == 200) push("/dashboard")
       else console.log("ERRO");
   }
