@@ -31,7 +31,7 @@ export default function LoginForm(){
 
     var status = "";
 
-    const response = await axios.post("https://seraphgradesapi.onrender.com/api/v1/user/login", {
+    const response = await axios.post("http://seraphgradesapi.onrender.com/api/v1/user/login", {
       email: state.email, 
       password: state.password,
       }, {
