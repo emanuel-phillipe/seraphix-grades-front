@@ -31,7 +31,7 @@ export default function LoginForm(){
 
     var status = "";
 
-    const response = await axios.post("https:www.seraphix.com.br/api/v1/user/login", {
+    const response = await axios.post("https://www.seraphix.com.br/api/v1/user/login", {
       email: state.email, 
       password: state.password,
       }, {
@@ -40,7 +40,7 @@ export default function LoginForm(){
       })
       .then((data) => {status = data.status})
 
-      if(status == 200) push("/")
+      if(status == 200) push("/dashboard")
   }
 
   const buttonSituation = state.email != "" && state.password != "" // CASO SEJA FALSO, O BOTÃO DE ENTRAR ESTARÁ BLOQUEADO
