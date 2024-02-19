@@ -32,14 +32,13 @@ export default function LoginForm(){
 
     var status = "";
 
-    const response = await axios.post("https://seraphgradesapi.onrender.com/api/v1/user/login", {
+    const dataToSend = {
       email: state.email, 
       password: state.password,
-      }, {
-        withCredentials: true,
-        headers: {"Content-Type": "application/json"}      
-      })
-      .then((data) => {console.log(data);})
+    }
+
+    const response = await axios.post("https://seraphgradesapi.onrender.com/api/v1/user/login", dataToSend, {headers: {"Content-Type": "application/json"}, withCredentials: true})
+    .then((data) => {status = data.status})
 
       if(status == 200) push("/dashboard")
       else console.log("ERRO");
