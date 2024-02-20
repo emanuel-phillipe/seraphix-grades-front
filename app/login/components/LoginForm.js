@@ -11,7 +11,7 @@ export default function LoginForm(){
   const {push} = useRouter()
 
   async function onStart(){
-    var data = await axios.get("https://seraphgradesapi.onrender.com/api/v1/user/info")
+    var data = await axios.get("https://seraphgradesapi.onrender.com/api/v1/user/info", {withCredentials: true})
     
     if(data) push("/dashboard")
   }
