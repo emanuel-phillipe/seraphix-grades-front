@@ -16,7 +16,7 @@ export default function LoginForm(){
       return;
     })
     
-    if(response) push("/dashboard")
+    if(data.status == 200) push("/dashboard")
     
     console.log(data);
     if(data) push("/dashboard")
