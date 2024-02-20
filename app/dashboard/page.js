@@ -13,9 +13,7 @@ export default function DashboardPage(){
     .catch(() => {
       push("/login")
       return false;
-    })
-    
-    if(data.status != 200 || !data.status) push("/login")    
+    })    
   }
   
   useEffect(() => {
