@@ -11,9 +11,9 @@ export default function LoginForm(){
   const {push} = useRouter()
 
   async function onStart(){
-    var status = Cookies.get("auth_token");
+    var data = await axios.get("https://seraphgradesapi.onrender.com/api/v1/user/login")
     
-    if(status) push("/dashboard")
+    if(data) push("/dashboard")
   }
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function LoginForm(){
     const response = await axios.post("https://seraphgradesapi.onrender.com/api/v1/user/login", dataToSend, {headers: {"Content-Type": "application/json"}, withCredentials: true, credentials: 'include'})
     .then((data) => {status = data.status})
 
-    console.log(status);
+    if(status==200) push("/dashboard")
   }
 
   const buttonSituation = state.email != "" && state.password != "" // CASO SEJA FALSO, O BOTÃO DE ENTRAR ESTARÁ BLOQUEADO
