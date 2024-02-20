@@ -13,7 +13,7 @@ export default function LoginForm(){
   async function onStart(){
     var data = await axios.get("https://seraphgradesapi.onrender.com/api/v1/user/info", {withCredentials: true})
     .catch(() => {
-      return;
+      return false;
     })
     
     if(data.status == 200) push("/dashboard")
