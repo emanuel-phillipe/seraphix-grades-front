@@ -18,7 +18,6 @@ export default function LoginForm(){
     
     if(data.status == 200) push("/dashboard")
     
-    console.log(data);
     if(data) push("/dashboard")
   }
 
