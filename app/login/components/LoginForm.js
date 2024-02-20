@@ -12,6 +12,10 @@ export default function LoginForm(){
 
   async function onStart(){
     var data = await axios.get("https://seraphgradesapi.onrender.com/api/v1/user/info", {withCredentials: true})
+    .then((response) => {
+      if(response) push("/dashboard")
+      else return;
+    })
     
     console.log(data);
     if(data) push("/dashboard")
