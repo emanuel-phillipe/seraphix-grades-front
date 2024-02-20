@@ -1,9 +1,7 @@
 "use client"; // This is a client component 👈🏽
 
 import { EyeSlash, Eye } from "@phosphor-icons/react/dist/ssr";
-import { data } from "autoprefixer";
 import axios from "axios";
-import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 

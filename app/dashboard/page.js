@@ -3,8 +3,10 @@
 import { useEffect } from "react"
 import Sidebar from "./components/Sidebar";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 export default function DashboardPage(){
+  const {push} = useRouter()
 
   async function onStart(){
     var data = await axios.get("https://seraphgradesapi.onrender.com/api/v1/user/info", {withCredentials: true})
