@@ -3,8 +3,8 @@ import SideButton from "./SideButton";
 
 export default function Sidebar(){
   return (
-    <div className="w-[17rem]">
-      <div className="bg-zinc-800 p-6 rounded-[12px] my-14">
+    <div className="w-[15rem]">
+      <div className="bg-zinc-800 p-6 rounded-[12px]">
         <h2 className="text-2xl text-zinc-100 font-semibold">Olá, Emanuel</h2>
         <p className="text-zinc-400 font-normal">Hoje é dia 19 de Fevereiro.</p>
 
